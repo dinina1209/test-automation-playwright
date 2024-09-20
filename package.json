@@ -1,0 +1,23 @@
+{
+  "name": "test-automation-essentials-dev-academy",
+  "version": "1.0.0",
+  "description": "Hola! Welcome to the Test Automation Essentials workshop by Dev Academy Aotearoa. This workshop is designed to provide you with a comprehensive understanding of test automation and its importance in modern software development practices.",
+  "main": "index.js",
+  "scripts": {
+    "env:local": "NODE_ENV=local npx playwright test",
+    "env:prod": "NODE_ENV=prod npx playwright test",
+    "test:trademe": "npx playwright test tests/trademe.spec.ts",
+    "env:sandbox": "NODE_ENV=sandbox npx playwright test tests/trademeSandbox.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^22.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "oauth-1.0a": "^2.2.6"
+  }
+}
