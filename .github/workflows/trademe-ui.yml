@@ -1,4 +1,4 @@
-name: Run Trademe Motors E2E Test
+name: Run Trademe Motors UI Test
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: install playwright browsers
         run: npx playwright install --with-deps
       - name: Run tests
-        run: npm run test:trademe
+        run: npm run env:trademe
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
@@ -35,10 +35,10 @@ jobs:
         run: |
             git config --global user.name 'GitHub Actions'
             git config --global user.email 'actions@github.com'
-            git clone --branch=gh-pages https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/dinina1209/test-automation-essentials-dev-academy || exit 0
+            git clone --branch=gh-pages https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/dinina1209/test-automation-playwright || exit 0
             mkdir -p gh-pages/tm-report
             cp -r playwright-report/* gh-pages/tm-report/
             cd gh-pages
             git add .
-            git commit -m "Update Trademe Playwright report"
+            git commit -m "Update Trademe UI Test report"
             git push origin gh-pages

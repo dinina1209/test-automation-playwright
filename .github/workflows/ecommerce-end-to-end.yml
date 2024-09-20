@@ -28,3 +28,17 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 30
+      - name: Deploy report to GitHub Pages
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git clone --branch=gh-pages https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/dinina1209/test-automation-playwright || exit 0
+          mkdir -p gh-pages/tm-report
+          cp -r playwright-report/* gh-pages/tm-report/
+          cd gh-pages
+          git add .
+          git commit -m "Update Trademe UI Test report"
+          git push origin gh-pages

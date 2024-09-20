@@ -3,7 +3,7 @@ const {TradeMepage} = require('./Pages/TradeMePage');
 
 test.describe('TradeMe Motors automation', ()=>{
   const carMakes:string[] = ['Ferrari', 'BMW', 'Mazda', 'Honda'];
-  const baseURL:string = "https://www.trademe.co.nz/a/motors";
+  const baseURL = process.env.URL;
   let trademePage;
 
   test.beforeEach(async ({ page }) => {
