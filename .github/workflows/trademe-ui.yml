@@ -1,4 +1,4 @@
-name: Run Trademe Motors E2E Test
+name: Run Trademe Motors UI Test
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: install playwright browsers
         run: npx playwright install --with-deps
       - name: Run tests
-        run: npm run test:trademe
+        run: npm run env:trademe
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
@@ -40,5 +40,5 @@ jobs:
             cp -r playwright-report/* gh-pages/tm-report/
             cd gh-pages
             git add .
-            git commit -m "Update Trademe Playwright report"
+            git commit -m "Update Trademe UI Test report"
             git push origin gh-pages

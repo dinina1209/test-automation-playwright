@@ -1,4 +1,4 @@
-name: Run Trademe Motors E2E Test
+name: Run Trademe API Automation Test
 
 on:
   push:
@@ -43,5 +43,5 @@ jobs:
             cp -r playwright-report/* gh-pages/tm-report/
             cd gh-pages
             git add .
-            git commit -m "Update Trademe Playwright report"
+            git commit -m "Update Trademe API Automation Test report"
             git push origin gh-pages
