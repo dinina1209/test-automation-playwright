@@ -35,7 +35,7 @@ jobs:
         run: |
             git config --global user.name 'GitHub Actions'
             git config --global user.email 'actions@github.com'
-            git clone --branch=gh-pages https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/dinina1209/test-automation-essentials-dev-academy || exit 0
+            git clone --branch=gh-pages https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/dinina1209/test-automation-playwright || exit 0
             mkdir -p gh-pages/tm-report
             cp -r playwright-report/* gh-pages/tm-report/
             cd gh-pages
