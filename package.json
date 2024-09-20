@@ -6,7 +6,7 @@
   "scripts": {
     "env:local": "NODE_ENV=local npx playwright test",
     "env:prod": "NODE_ENV=prod npx playwright test",
-    "env:trademe": "npx playwright test tests/trademe.spec.ts",
+    "env:trademe": "NODE_ENV=trademe npx playwright test tests/trademe.spec.ts",
     "env:sandbox": "NODE_ENV=sandbox npx playwright test tests/trademeSandbox.spec.ts"
   },
   "keywords": [],
